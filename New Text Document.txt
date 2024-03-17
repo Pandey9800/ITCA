@@ -1,0 +1,29 @@
+<div style="container">
+
+  <strong> Add and Delete Form Questions Dynamically   <button id="rowAdder" type="button" class="btn btn-dark">
+            <span class="bi bi-plus-square-dotted">
+            </span> <i class="fa fa-plus"></i>
+          </button></strong>
+    <div class="">
+      <div id="newinput"></div>
+      <!--  -->
+      
+    
+    
+        <!--  -->
+      </div>
+      
+        <hr>
+      <p>  <a href="service?did=15" class="btn btn-danger btn-lg" onclick="return confirm('Do You Want To Remove')">Do You Want To Delete?</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button href="./?submit" class="btn btn-info btn-lg" type="submit" name="update">Save</button></p>
+      </div>
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+  <h2 style="color:green"></h2>
+                <div style="container">
+                  
+                <strong> Add Form Questions <button id="rowAdder" type="button" class="btn btn-dark">
+                  <span class="bi bi-plus-square-dotted">
+                    </span> <i class="fa fa-plus"></i>
+                  </button></strong>
+                  <div class="">
+                    <div id="newinput"></div>
