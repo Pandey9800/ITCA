@@ -1,0 +1,8 @@
+[04-May-2018 13:09:13 Etc/GMT] PHP Notice:  Undefined index: admin in /home/ssinf6q4/public_html/taxjeevan.com/admin/register_member/list_of_register.php on line 9
+[04-May-2018 13:09:13 Etc/GMT] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/ssinf6q4/public_html/taxjeevan.com/admin/register_member/list_of_register.php on line 10
+[09-May-2018 12:20:53 Etc/GMT] PHP Notice:  Undefined index: admin in /home/ssinf6q4/public_html/taxjeevan.com/admin/register_member/list_of_register.php on line 9
+[09-May-2018 12:20:53 Etc/GMT] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/ssinf6q4/public_html/taxjeevan.com/admin/register_member/list_of_register.php on line 10
+[10-May-2018 07:30:46 Etc/GMT] PHP Notice:  Undefined index: admin in /home/ssinf6q4/public_html/taxjeevan.com/admin/register_member/list_of_register.php on line 9
+[10-May-2018 07:30:46 Etc/GMT] PHP Warning:  mysqli_fetch_assoc() expects parameter 1 to be mysqli_result, boolean given in /home/ssinf6q4/public_html/taxjeevan.com/admin/register_member/list_of_register.php on line 10
+[25-Jan-2023 09:22:20 Asia/Kolkata] PHP Notice:  Constant RUPEES already defined in /home/wsbnkqda/pan-itr.focusmedia.co.in/admin/function/db_connect.php on line 3
+[26-Jan-2023 12:58:06 Asia/Kolkata] PHP Notice:  Constant RUPEES already defined in /home/wsbnkqda/pan-itr.focusmedia.co.in/admin/function/db_connect.php on line 3

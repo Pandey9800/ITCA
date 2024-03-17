@@ -1,0 +1,1 @@
+<?php  ob_start(); session_start(); unset($_SESSION["partid"]); echo "<center><b>LOGOUT SUCESSFULLY</b></center>"; header('location: ./'); exit(); ob_end_flush(); ?>
