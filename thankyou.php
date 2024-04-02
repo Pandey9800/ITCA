@@ -1,14 +1,11 @@
 <?php
 session_start();
-include_once 'admin/function/db_connect.php'; // Include header.php only once
-include_once 'admin/function/function.php'; // Include function.php only once
-
+include_once 'admin/function/db_connect.php';
+include_once 'admin/function/function.php';
 
 // Check if the form is submitted using POST
 if (isset($_GET['custid']) && isset($_GET['service_id']) && isset($_GET['catid'])) {
-    // Sanitize and validate the input data
 $ip = $_SERVER['REMOTE_ADDR'];
-//custid=116&service_id=111&catid=22
 $insertTaskQuery = "INSERT INTO `task` (`stfid`, `applicantid`, `coupan`, `taskid`, `catid`, `mrp`, `taskamt`, `status`, `taskdiscamt`, `ip`)
     VALUES (0, '".trim($_GET['custid'])."',0, '".trim($_GET['service_id'])."','".trim($_GET['catid'])."', 0, 0, 1, 0, '".$ip."')";    
 //
@@ -24,7 +21,76 @@ $result = mysqli_query($con, $insertTaskQuery);
     //     echo "Error: " . mysqli_error($con);
     // }
 }
-?>
+
+if (isset($_GET['custid'], $_GET['service_id'], $_GET['catid'])) {
+  $custid = validate($_GET['custid']);
+  $service_id = validate($_GET['service_id']);
+  $catid = validate($_GET['catid']);
+
+} else {
+  echo "Required parameters not provided in the URL.";
+}
+
+// $customerEmail = $_GET['email'];
+
+
+// require 'PHPMailer/Exception.php';
+// require 'PHPMailer/PHPMailer.php';
+// require 'PHPMailer/SMTP.php';
+
+// use PHPMailer\PHPMailer\PHPMailer;
+// use PHPMailer\PHPMailer\Exception;
+// use PHPMailer\PHPMailer\SMTP;
+
+// $mail = new PHPMailer(true);
+
+// try {
+//     $mail->SMTPDebug = SMTP::DEBUG_SERVER;                     
+//     $mail->isSMTP();                                           
+//     $mail->Host       = 'smtp.gmail.com';               
+//     $mail->SMTPAuth   = true;                        
+//     $mail->Username   = 'pandey.ravi9800@gmail.com'; 
+//     $mail->Password   = 'enkj warw uzsy ritb';       
+//     $mail->SMTPSecure = 'ssl';            // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+//     $mail->Port       = 465;                       
+//     $mail->setFrom('pandey.ravi9800@gmail.com', 'Panda Baba');
+//     $mail->addAddress($customerEmail);             
+//     $mail->isHTML(true);                     
+//     $mail->Subject = 'Thank You.';
+    
+//     $serviceQuery = "SELECT `name` FROM `service` WHERE `id` = $service_id";
+//     $serviceResult = mysqli_query($con, $serviceQuery);
+//     $serviceRow = mysqli_fetch_assoc($serviceResult);
+//     $serviceName = $serviceRow['name'];
+
+//     $categoryQuery = "SELECT `cast` FROM `cat` WHERE `catid` = $catid";
+//     $categoryResult = mysqli_query($con, $categoryQuery);
+//     $categoryRow = mysqli_fetch_assoc($categoryResult);
+//     $categoryName = $categoryRow['cast'];
+
+    
+
+//     function genrenpwd($length = 8) {
+//       $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+//       $password = '';
+//       for ($i = 0; $i < $length; $i++) {
+//           $password .= $characters[rand(0, strlen($characters) - 1)];
+//       }
+//       return $password;
+//   }
+
+// $randomPassword = genrenpwd();
+
+// $mail->Body    = 'Thank you for applying for ' . $serviceName . ' in ' . $categoryName . '. Your application number is: ' . $applicationNumber . '. Your password is: ' . $randomPassword . '. You can login to our website with your contact number and this password to track your application status.';
+
+    // $mail->Body    = 'Thank you for applying for ' . $serviceName . ' in ' . $categoryName . '. Your application number is: ' . $applicationNumber . '. You can track your application status from our website.';
+
+//     $mail->send();
+//     echo 'Message has been sent';
+// } catch (Exception $e) {
+//     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+// }
+// ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +122,7 @@ $result = mysqli_query($con, $insertTaskQuery);
   box-sizing: border-box;
 }
 body  { 
-  overflow: hidden; /* Add this to prevent overflow */
+  overflow: hidden;
   height: 100vh;
   display: flex;
   font-size: 14px;
@@ -234,19 +300,7 @@ button:hover {
         }
     </script>
 </head>
-<?php
 
-   // Check if custid, service_id, and catid are present in the URL
-if (isset($_GET['custid'], $_GET['service_id'], $_GET['catid'])) {
-  $custid = validate($_GET['custid']);
-  $service_id = validate($_GET['service_id']);
-  $catid = validate($_GET['catid']);
-
-} else {
-  // Handle the case where any of the parameters are missing in the URL
-  echo "Required parameters not provided in the URL.";
-}
-    ?>
     <body>
 <div class="wrapperAlert">
 

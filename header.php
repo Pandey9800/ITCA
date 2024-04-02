@@ -79,7 +79,6 @@ function loginUser($con, $contact, $randomPassword) {
     }
 }
 
-// Function to send registration confirmation email
 function sendRegistrationConfirmationEmail($user_email, $name, $lname , $contact , $randomPassword) {
     global $mail;
     $mail->addAddress($user_email);
